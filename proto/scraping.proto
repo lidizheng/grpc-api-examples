@@ -1,0 +1,27 @@
+// Proto definition for a simple scraping example.
+
+syntax = "proto3";
+
+message ScrapingRequest {
+    // Each request contains one target URL.
+    string target = 1;
+}
+
+message WebPage {
+    // The URL for the web page.
+    string url = 1;
+    // The downloaded content for the web page.
+    string content = 2;
+}
+
+message ScrapingResponse {
+    // The WebPage message.
+    WebPage page = 1;
+}
+
+service Scraper {
+    // Scraper receives scraping targets from the caller, and download the web
+    // pages for them. The web pages sent back will be processed, and strip urls
+    // that pending to be scraped. The caller should re-distribute those urls.
+    rpc scrape(stream ScrapingRequest) returns (stream ScrapingResponse);
+}
