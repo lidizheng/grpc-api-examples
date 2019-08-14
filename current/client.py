@@ -1,3 +1,5 @@
+"""The basic implementation for client."""
+
 import binascii
 import hashlib
 import itertools
