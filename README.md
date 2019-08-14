@@ -5,7 +5,7 @@ goal is to evaluate following aspects:
 
 1. Usability;
 2. Migration cost;
-3. Engineer cost.
+3. Engineering cost.
 
 ## What does the example do?
 
